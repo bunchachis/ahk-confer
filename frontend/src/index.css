@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.column.profiles, .column.editor {
+  box-shadow: 0 0 1px #00000030, 0 0 10px #00000020;
+}
+.profiles .list {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.profiles .list .list-group-item {
+  background-color: #f4f4f4;
+  padding: 20px 30px;
+}
+.profiles .list .list-group-item.active {
+  background-color: #969592;
+  border-color: #807b75;
+}
+.profiles .list .list-group-item:hover:not(.active) {
+  background-color: #d0cecc;
+}
+.profiles .list .item-buttons {
+  float: right;
+  visibility: hidden;
+}
+.profiles .list .list-group-item:hover .item-buttons,
+.profiles .list .list-group-item.active .item-buttons {
+  visibility: visible;
+}
+.profiles .list .item-buttons button {
+  display: inline-block;
+}
+.profiles .list .item-buttons button + button {
+  margin-left: 10px;
+}
+
+.layouts .keypad + .keypad {
+  margin-top: 40px;
+}
+.layouts .keypad .mod-btn:not(.lit) {
+  border-color: #f8f8f8;
+  background: #f8f8f8;
+}
+
+.flex {
+  display: flex !important;
+}
+.flex-col {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.column {
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-items: start;
+}
+.stash .list {
+  margin-top: 5px;
+}
+.stash button + button{
+  margin-top: 10px;
+}
+
+.editor {
+  border-radius: 4px 4px 0 0;
+  float: left;
+  height: 100%;
+}
+.header.editor-header {
+  background: #e7e7e7;
+  margin-bottom: 20px;
+}
+.combo {
+  display: inline-flex;
+}
+.combo button + button {
+  margin-left: 5px;
+}
+.combo button.btn {
+  height: 30px;
+  width: 30px;
+  pointer-events: none;
+}
+.editor label {
+  font-weight: 500;
+}
+
+.keypad {
+  margin: -5px;
+  display: flex;
+}
+.keypad .suffix .rule-btn {
+  width: 40px;
+  height: 40px;
+}
+.keypad .suffix .rule-btn svg {
+  font-size: 25px;
+}
+.keypad td {
+  padding: 0;
+}
+
+.btn.rule-btn {
+  width: 65px;
+  height: 65px;
+  line-height: 15px;
+  margin: 5px;
+  padding: 3px;
+}
+.btn.rule-btn svg {
+  font-size: 35px;
+}
+.btn.rule-btn.hover-icon svg {
+  display: none;
+}
+.btn.rule-btn.hover-icon:hover svg {
+  display: inline-block;
+}
+.rule-btn.editing.draft {
+  box-shadow: 0 0 0 4px #8ae011, 0 0 3px 3px #666 !important;
+}
+.rule-btn.editing {
+  box-shadow: 0 0 0 4px #42b3ff, 0 0 3px 3px #666 !important;
+}
+.rule-btn.btn-sm {
+  height: 30px;
+}
+.mod-btn {
+  width: 65px;
+  height: 65px;
+  margin: 5px;
+}
+.mod-btn.btn-sm {
+  height: 30px;
+}
+
+.as-link {
+  display: inline;
+  color: #007bff;
+  background: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+.as-link:hover {
+  text-decoration: none;
+}
+.as-link:active {
+  color: #0052ab;
+}
+
+.header {
+  margin: -10px -30px 20px -30px;
+  padding: 10px 30px;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h3 {
+  line-height: 39px;
+  margin-bottom: 0;
+}
+.header .btn {
+  margin-left: 10px;
+  text-align: center;
+  min-width: 38px;
+  white-space: nowrap;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.separator::before, .separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e7e9ec;
+}
+.separator::before {
+  margin-right: 20px;
+}
+.separator::after {
+  margin-left: 20px;
+}
+
+.icon-list button.remove {
+  color: #dc3545 !important;
+}
+.icon-list button.btn.remove:hover,
+.icon-list button.btn.remove:active {
+  color: #bd2130 !important;
+}
+.icon-list button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  border: none;
+  background-color: transparent !important;
+  color: #333 !important;
+  box-shadow: none !important;
+}
+div.icon-list button.btn:hover {
+  border: none;
+  background-color: transparent !important;
+  color: #007bff !important;
+}
+div.icon-list button.btn:active {
+  border: none;
+  background-color: transparent !important;
+  color: #007bff !important;
+}
+
+.editor .form-group {
+  margin-bottom: 20px;
+}
+.compact-form .form-group {
+  margin-bottom: 0;
+}
+.compact-form .form-group + .form-group {
+  margin-top: 9px;
+}
+
+.code-editor textarea:focus, pre:focus {
+  outline: none !important;
+}
+
+.hover-bar > div + div {
+  visibility: hidden;
+}
+.hover-bar:hover > div + div {
+  visibility: visible;
+}
