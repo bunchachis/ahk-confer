@@ -11,9 +11,11 @@ router.get('/', (req, res) => {
     } else {
       const profiles = []
       files.map(filename => {
-        const {id, settings} = JSON.parse(fs.readFileSync(`saves/${filename}`).toString())
-        const isDeployed = fs.existsSync(deployPath + id + '.ahk')
-        profiles.push({id, settings, isDeployed})
+        if (filename.endsWith('.json')) {
+          const {id, settings} = JSON.parse(fs.readFileSync(`saves/${filename}`).toString())
+          const isDeployed = fs.existsSync(deployPath + id + '.ahk')
+          profiles.push({id, settings, isDeployed})
+        }
       })
       res.json(profiles)
     }
